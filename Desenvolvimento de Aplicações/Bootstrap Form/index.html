@@ -12,49 +12,66 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
+
+<!-- Header com créditos -->
 <header class="bg-dark text-center text-white mb-5 shadow-sm">
-  <!-- Copyright -->
+
   <div class="text-center p-3">
     Feito por <b> Gabriel Damico</b> para <b>Faculdade Descomplica </b>
   </div>
-  <!-- Copyright -->
+
 </header>
 
 <body>
+  <!-- Container principal da página-->
   <div class="container ">
     <div class="row mt-5">
 
-      <div class="col-6 mb-3">
+      <!-- Inputs Nome, Sobrenome e Email-->
+      <div class="col-6 mb-3" id="inputNome">
         <label for="nome" class="form-label">Nome</label>
         <input type="text" name="nome" class="form-control" id="nome">
       </div>
 
-      <div class="col-6 mb-3">
+      <div class="col-6 mb-3" id="inputSobrenome">
         <label for="sobrenome" class="form-label">Sobrenome</label>
         <input type="text" name="sobrenome" class="form-control" id="sobrenome">
       </div>
 
-      <div class="col-12 mb-3">
+      <div class="col-12 mb-3" id="inputEmail">
         <label for="email" class="form-label">Email</label>
         <input type="email" name="email" class="form-control" id="email">
       </div>
 
+      <!-- Fim dos Inputs Nome, Sobrenome e Email-->
+
+      <!-- Botão de submit que ao ser clicado chama o modal de confirmação de informaçãoes-->
       <div class="mt-3 text-center">
         <button type="submit" class="btn btn-primary col-12" data-bs-toggle="modal" data-bs-target="#exampleModal"
           onclick="clicou()">Enviar</button>
-        <!-- Modal -->
+        <!-- fim do Botão de submit-->
+
+        <!-- Modal para confirmar informações-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
+
+              <!-- Título do Modal-->
               <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Confirme suas informações</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
+              <!-- fim do título do modal-->
+
+              <!-- Body do modal com spans que servem como placeholders da informação pega pelo JavaScript-->
               <div class="modal-body row">
                 <p class="text-start fs-6 col-6"><b>Nome: </b> <span id="mostraNome"></span> </p>
                 <p class="text-start fs-6 col-6"><b>Sobrenome:</b> <span id="mostraSobrenome"></span></p>
                 <p class="text-start fs-6 col-12"> <b>E-mail:</b> <span id="mostraEmail"></span></p>
               </div>
+              <!-- fim do Body do modal -->
+
+              <!-- Após confirmar as informações, o botão confirmar chama outro modal-->
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -64,7 +81,7 @@
           </div>
         </div>
 
-        <!-- Modal Confirmado -->
+        <!-- Modal de informações confirmadas-->
         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -72,7 +89,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <iframe src="https://embed.lottiefiles.com/animation/76649"></iframe>
+                <img src="img/76649-checked.gif" class="card-img-top" style="height: 40%; width: 40%"
+                  alt="Green Check gif">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Informações confirmadas com sucesso!</h1>
               </div>
               <div class="modal-footer">
@@ -80,50 +98,34 @@
               </div>
             </div>
           </div>
-
         </div>
-
-
+        <!-- Fim do Modal de informações confirmadas-->
       </div>
     </div>
 
   </div>
+  <!-- Fim do container principal -->
 
 </body>
-
-
-
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
   </script>
+
+
 <script>
   function clicou() {
-    var nome = document.getElementById("nome").value
-    var sobrenome = document.getElementById("sobrenome").value
-    var email = document.getElementById("email").value
-    document.getElementById("mostraNome").innerHTML = nome
-    document.getElementById("mostraSobrenome").innerHTML = sobrenome
-    document.getElementById("mostraEmail").innerHTML = email
+    var nome = document.getElementById("nome").value;
+    var sobrenome = document.getElementById("sobrenome").value;
+    var email = document.getElementById("email").value;
+    document.getElementById("mostraNome").innerHTML = nome;
+    document.getElementById("mostraSobrenome").innerHTML = sobrenome;
+    document.getElementById("mostraEmail").innerHTML = email;
 
   }
 
-  /*
-      document.getElementById("enviar").addEventListener("click", myFunction);
-    
-      function myFunction() {
-        alert("Hello! I am an alert box!!");
-      }
-    
-      
-          function abacate() {
-            var nome = document.getElementById("nome")
-            var sobrenome = document.getElementById("sobrenome")
-            var email = document.getElementById("email")
-            alert(nome)
-          }
-      */
+
 </script>
 
 
